@@ -6,16 +6,24 @@
 
 
 var TrainTripKM = Number(prompt("Quanti Chilometri vuoi percorrere?"));
+if (isNaN (TrainTripKM) )
+alert("Sei Nabbo");
 var Age = Number(prompt("How old are you?"));
+if (isNaN (Age) )
+alert("Sei Nabbo");
 //costo per KM
 var CostKm = 0.21;
-var Price = TrainTripKM *CostKm;
+var StandardPrice = TrainTripKM *CostKm;
+var UnderDiscount = StandardPrice* 0.2;
+var OverDiscount = StandardPrice * 0.6;
+var OverPrice = StandardPrice - OverDiscount;
+var UnderPrice = StandardPrice - UnderDiscount;
+var FinalPrice = StandardPrice;
 if (Age >= 65) {
-    Price = Price - (Price * 0.4);
+FinalPrice = StandardPrice - OverDiscount;
+if (Age <= 17) {
+    FinalPrice =  StandardPrice - UnderDiscount;
 }
-else if ( Age <= 17){
-    Price = Price - (Price * 0.2);
 }
 
-
-document.getElementById("Price-train").innerHTML = Price;
+document.getElementById("Price-train").innerHTML = FinalPrice;
