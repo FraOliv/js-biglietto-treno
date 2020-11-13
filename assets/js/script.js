@@ -13,11 +13,17 @@ if (isNaN (Age) )
 alert("Sei Nabbo");
 //costo per KM
 var CostKm = 0.21;
+//prezzo senza sconto
 var StandardPrice = TrainTripKM *CostKm;
+// sconto under 18
 var UnderDiscount = StandardPrice* 0.2;
+// sconto over 65
 var OverDiscount = StandardPrice * 0.6;
+//  prezzo scontato per over 65
 var OverPrice = StandardPrice - OverDiscount;
+// prezzo scontato per gli under 18
 var UnderPrice = StandardPrice - UnderDiscount;
+// prezzo finale
 var FinalPrice = StandardPrice;
 if (Age >= 65) {
 FinalPrice = StandardPrice - OverDiscount;
