@@ -7,9 +7,6 @@
 
 var TrainTripKM = Number(prompt("Quanti Chilometri vuoi percorrere?"));
 var Age = Number(prompt("How old are you?"));
-if (Age !== Number){
-    alert("You are a Noob")
-}
 //costo per KM
 var CostKm = 0.21;
 var Price = TrainTripKM *CostKm;
