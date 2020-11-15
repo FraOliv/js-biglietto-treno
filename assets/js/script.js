@@ -5,10 +5,10 @@
 //va applicato uno sconto del 40% per gli over 65
 
 
-var TrainTripKM = Number(prompt("Quanti Chilometri vuoi percorrere?"));
+var TrainTripKM = Number(prompt("Benvenuto da Trenitalia quanti km devi percorrere?"));
 if (isNaN (TrainTripKM) )
 alert("Sei Nabbo");
-var Age = Number(prompt("How old are you?"));
+var Age = Number(prompt("Quanti anni hai?"));
 if (isNaN (Age) )
 alert("Sei Nabbo");
 //costo per KM
@@ -18,7 +18,7 @@ var StandardPrice = TrainTripKM *CostKm;
 // sconto under 18
 var UnderDiscount = StandardPrice* 0.2;
 // sconto over 65
-var OverDiscount = StandardPrice * 0.6;
+var OverDiscount = StandardPrice * 0.4;
 //  prezzo scontato per over 65
 var OverPrice = StandardPrice - OverDiscount;
 // prezzo scontato per gli under 18
@@ -32,4 +32,4 @@ if (Age <= 17) {
 }
 }
 
-document.getElementById("Price-train").innerHTML = FinalPrice;
+document.getElementById("Price-train").innerHTML = "Ciao, visto che hai " + Age + " anni il prezzo finale è " + FinalPrice + " $";
