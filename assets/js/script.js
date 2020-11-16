@@ -15,21 +15,11 @@ alert("Sei Nabbo");
 var CostKm = 0.21;
 //prezzo senza sconto
 var StandardPrice = TrainTripKM *CostKm;
-// sconto under 18
-var UnderDiscount = StandardPrice* 0.2;
-// sconto over 65
-var OverDiscount = StandardPrice * 0.4;
-//  prezzo scontato per over 65
-var OverPrice = StandardPrice - OverDiscount;
-// prezzo scontato per gli under 18
-var UnderPrice = StandardPrice - UnderDiscount;
-// prezzo finale
-var FinalPrice = StandardPrice;
 if (Age >= 65) {
-FinalPrice = StandardPrice - OverDiscount;
-if (Age <= 17) {
-    FinalPrice =  StandardPrice - UnderDiscount;
+    StandardPrice = StandardPrice - (StandardPrice * 0.4);
 }
+else if ( Age <= 17){
+    StandardPrice = StandardPrice - (StandardPrice * 0.2);
 }
 
-document.getElementById("Price-train").innerHTML = "Ciao, visto che hai " + Age + " anni il prezzo finale è " + FinalPrice + " $";
+document.getElementById("Price-train").innerHTML = "Ciao, visto che hai " + Age + " anni il prezzo finale è " + StandardPrice + " $";
